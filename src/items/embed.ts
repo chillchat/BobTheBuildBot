@@ -1,9 +1,9 @@
-import { RichEmbed } from "discord.js";
 import { Factory } from "../helpers/Factory";
 import { IBuild } from "./build";
+import { MessageEmbed } from "discord.js";
 
-function embed(buildInfo: IBuild): RichEmbed {
-  return new RichEmbed({
+function embed(buildInfo: IBuild): MessageEmbed {
+  return new MessageEmbed({
     title: "Canary Update"
   })
     .addField("Build Number:", buildInfo.buildNumber, true)
@@ -11,4 +11,4 @@ function embed(buildInfo: IBuild): RichEmbed {
     .addField("Build Hash:", buildInfo.buildHash, false);
 }
 
-export const embedFactory = Factory<RichEmbed>(embed);
+export const embedFactory = Factory<MessageEmbed>(embed);
